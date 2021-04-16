@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "694859128213",
+    "firebase_url": "https://the-gadget-factorie-default-rtdb.firebaseio.com",
+    "project_id": "the-gadget-factorie",
+    "storage_bucket": "the-gadget-factorie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694859128213:android:3dc57c51adc5bf82aeea9c",
+        "android_client_info": {
+          "package_name": "com.example.thegadgetfactorie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694859128213-8hfte59drqr69p8oqb9kqv4dmlqcacav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5BSSQJm9kGAlrnz-bkNIpFx8ugJqGxq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694859128213-8hfte59drqr69p8oqb9kqv4dmlqcacav.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
