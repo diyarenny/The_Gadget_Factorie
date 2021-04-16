@@ -28,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
     private Button createNewAccountBtn;  //create new account button
     private ProgressBar loginProgressBr;   //login progress bar
     private TextView forgotPass;   //forgot password
-    private TextView resetPass;   //reset password
 
     private FirebaseAuth mAuth;
 
@@ -45,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
         createNewAccountBtn = (Button) findViewById(R.id.login_reg_btn);
         loginProgressBr = (ProgressBar) findViewById(R.id.progressBar);
         forgotPass = (TextView) findViewById(R.id.forgotPass);
-        resetPass  = (TextView) findViewById(R.id.resetPass);
 
         //create new account btn, user sent to register activity
         createNewAccountBtn.setOnClickListener(new View.OnClickListener() {

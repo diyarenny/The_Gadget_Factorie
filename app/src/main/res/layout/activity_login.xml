@@ -97,26 +97,13 @@
         android:layout_width="117dp"
         android:layout_height="32dp"
         android:text="@string/forgot_password"
-        android:textColor="@color/colorAccent"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.608" />
-
-    <TextView
-        android:id="@+id/resetPass"
-        android:layout_width="109dp"
-        android:layout_height="30dp"
-        android:text="@string/reset_password"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintVertical_bias="0.612" />
 
     <TextView
         android:id="@+id/login_image"
@@ -146,6 +133,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697" />
+        app:layout_constraintVertical_bias="0.798" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
