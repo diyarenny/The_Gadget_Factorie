@@ -8,4 +8,8 @@ public class Product {
     String stocklevel;
     String image;
 
+    //empty constructor
+    public Product(){
+
+    }
 }
