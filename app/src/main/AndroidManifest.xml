@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CustomerRegisterActivity"/>
+        <activity android:name=".CustomerForgotPasswordActivity"/>
+        <activity android:name=".AdminForgotPasswordActivity" />
+        <activity android:name=".CustomerRegisterActivity" />
         <activity android:name=".CustomerLoginActivity" />
         <activity android:name=".AdminRegisterActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".AdminLoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".HomePageActivity">

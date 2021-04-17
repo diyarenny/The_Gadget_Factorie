@@ -93,7 +93,7 @@
 
 
     <TextView
-        android:id="@+id/forgotPass"
+        android:id="@+id/admin_forgotPass"
         android:layout_width="117dp"
         android:layout_height="32dp"
         android:text="@string/forgot_password"

@@ -19,36 +19,36 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import org.w3c.dom.Text;
 
-public class ForgotPasswordActivity extends AppCompatActivity {
+public class CustomerForgotPasswordActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private Button resetButton;
-    private EditText resetPassInfo;
+    private Button customer_reset_btn;
+    private EditText customer_resetPassword;
     private ProgressBar resetProgressBr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgot_password);
+        setContentView(R.layout.activity_customer_forgot_password);
 
         mAuth = FirebaseAuth.getInstance();
-        resetPassInfo = (EditText) findViewById(R.id.resetPassword);
-        resetButton = (Button) findViewById(R.id.reset_btn);
+        customer_resetPassword = (EditText) findViewById(R.id.customer_resetPassword);
+        customer_reset_btn = (Button) findViewById(R.id.customer_reset_btn);
         resetProgressBr = (ProgressBar) findViewById(R.id.progressBar3);
 
-        resetButton.setOnClickListener(new View.OnClickListener() {
+        customer_reset_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = resetPassInfo.getText().toString().trim();
+                String email = customer_resetPassword.getText().toString().trim();
 
                 if(email.isEmpty()){
-                    resetPassInfo.setError("Email is required");
-                    resetPassInfo.requestFocus();
+                    customer_resetPassword.setError("Email is required");
+                    customer_resetPassword.requestFocus();
                     return;
                 }
                 if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    resetPassInfo.setError("Please provide a valid email");
-                    resetPassInfo.requestFocus();
+                    customer_resetPassword.setError("Please provide a valid email");
+                    customer_resetPassword.requestFocus();
                     return;
                 }
                 resetProgressBr.setVisibility(View.VISIBLE);
@@ -56,11 +56,11 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(ForgotPasswordActivity.this, "Check your email to reset password", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                            Toast.makeText(CustomerForgotPasswordActivity.this, "Check your email to reset password", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(), CustomerLoginActivity.class));
                         }
                         else{
-                            Toast.makeText(ForgotPasswordActivity.this, "Try again! Something wrong happened!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(CustomerForgotPasswordActivity.this, "Try again! Something wrong happened!", Toast.LENGTH_LONG).show();
                         }
                     }
                 });

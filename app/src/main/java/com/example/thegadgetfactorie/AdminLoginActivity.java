@@ -27,7 +27,7 @@ public class AdminLoginActivity extends AppCompatActivity {
     private Button admin_login_btn;   //login button
     private Button admin_register_btn;  //create new account button
     private ProgressBar loginProgressBr;   //login progress bar
-    private TextView forgotPass;   //forgot password
+    private TextView admin_forgotPass;   //forgot password
 
     private FirebaseAuth mAuth;
 
@@ -43,7 +43,7 @@ public class AdminLoginActivity extends AppCompatActivity {
         admin_login_btn = (Button) findViewById(R.id.admin_login_btn);
         admin_register_btn = (Button) findViewById(R.id.admin_register_btn);
         loginProgressBr = (ProgressBar) findViewById(R.id.progressBar);
-        forgotPass = (TextView) findViewById(R.id.forgotPass);
+        admin_forgotPass = (TextView) findViewById(R.id.admin_forgotPass);
 
         //create new account btn, user sent to register activity
         admin_register_btn.setOnClickListener(new View.OnClickListener() {
@@ -53,10 +53,10 @@ public class AdminLoginActivity extends AppCompatActivity {
             }
         });
 
-        forgotPass.setOnClickListener(new View.OnClickListener() {
+        admin_forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ForgotPasswordActivity.class));
+                startActivity(new Intent(getApplicationContext(), AdminForgotPasswordActivity.class));
             }
         });
 

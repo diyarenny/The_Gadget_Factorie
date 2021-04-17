@@ -56,7 +56,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
         forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ForgotPasswordActivity.class));
+                startActivity(new Intent(getApplicationContext(), CustomerForgotPasswordActivity.class));
             }
         });
 
