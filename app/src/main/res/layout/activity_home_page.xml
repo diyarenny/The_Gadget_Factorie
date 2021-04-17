@@ -8,6 +8,7 @@
     tools:context=".HomePageActivity"
     android:background="@color/colorPrimary">
 
+
     <Button
         android:id="@+id/admin_login"
         android:layout_width="0dp"
@@ -16,38 +17,42 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="76dp"
         android:backgroundTint="@color/colorAccent"
         android:ems="10"
-        android:text="@string/admin_login"
         android:padding="16dp"
+        android:text="@string/admin_login"
         android:textColor="@android:color/white"
         android:textColorHint="@color/whiteTransparentHalf"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar0"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="195dp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/customer_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@color/colorAccent"
-        android:paddingBottom="14dp"
         android:paddingTop="14dp"
+        android:paddingBottom="14dp"
         android:text="@string/customer_login"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/admin_login" />
-
+        app:layout_constraintTop_toBottomOf="@+id/admin_login"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/login_image"
@@ -87,9 +92,11 @@
         android:text="@string/choose_account_type"
         android:textColor="@android:color/secondary_text_dark"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/admin_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_image" />
+        app:layout_constraintTop_toBottomOf="@+id/login_image"
+        app:layout_constraintVertical_bias="0.064" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
