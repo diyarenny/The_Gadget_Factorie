@@ -9,12 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminRegisterActivity"></activity>
-        <activity android:name=".AdminLoginActivity" />
-        <activity
-            android:name=".ui.login.AdminLoginActivity"
-            android:label="@string/title_activity_admin_login" />
+        <activity android:name=".AdminRegisterActivity"/>
         <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".AdminLoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".HomePageActivity">
             <intent-filter>
