@@ -60,7 +60,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
         admin_reg_login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), AdminLoginActivity.class));
             }
         });
 
@@ -118,7 +118,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             User user = new User(username, email);
 
-                            FirebaseDatabase.getInstance().getReference("Users")
+                            FirebaseDatabase.getInstance().getReference("Admin")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

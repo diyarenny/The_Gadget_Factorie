@@ -33,4 +33,8 @@
     <string name="already_have_an_acount_admin">Already Have An Acount Admin?</string>
     <string name="already_have_an_account_admin">Already Have An Account Admin?</string>
     <string name="admin">Admin</string>
+    <string name="customer_email">Customer Email</string>
+    <string name="customer_password">Customer Password</string>
+    <string name="customer">Customer</string>
+    <string name="new_here_create_an_account_customer">New Here Create An Account Customer</string>
 </resources>
