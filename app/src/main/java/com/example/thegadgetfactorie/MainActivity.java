@@ -60,14 +60,14 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if(currentUser == null){
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
         }
     }
 
     //logs out the user and send back to the login page
     private void logOut() {
         firebaseAuth.signOut();
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
     }
 
 }
