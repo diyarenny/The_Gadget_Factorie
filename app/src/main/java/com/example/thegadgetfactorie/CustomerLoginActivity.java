@@ -49,7 +49,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
         customer_register_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AdminRegisterActivity.class));
+                startActivity(new Intent(getApplicationContext(), CustomerRegisterActivity.class));
             }
         });
 

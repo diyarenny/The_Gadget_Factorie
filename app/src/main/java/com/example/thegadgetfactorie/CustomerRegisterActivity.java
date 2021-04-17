@@ -26,13 +26,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AdminRegisterActivity extends AppCompatActivity {
+public class CustomerRegisterActivity extends AppCompatActivity {
     //variables
     public static final String TAG = "TAG";
-    private EditText admin_reg_username; //register username
-    private EditText admin_reg_email;  //register email
-    private EditText admin_reg_pass;  //register password
-    private EditText admin_reg_confirm_pass;  //register confirm password
+    private EditText customer_reg_username; //register username
+    private EditText customer_reg_email;  //register email
+    private EditText customer_reg_pass;  //register password
+    private EditText customer_reg_confirm_pass;  //register confirm password
     private ProgressBar regProgressBr;  //reg progress bar
 
     private FirebaseAuth mAuth;
@@ -43,69 +43,69 @@ public class AdminRegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_register);
+        setContentView(R.layout.activity_customer_register);
 
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        admin_reg_username = (EditText) findViewById(R.id.admin_reg_username);
-        admin_reg_email = (EditText) findViewById(R.id.admin_reg_email);
-        admin_reg_pass = (EditText) findViewById(R.id.admin_reg_pass);
-        admin_reg_confirm_pass = (EditText) findViewById(R.id.admin_reg_confirm_pass);
-        Button admin_reg_btn = (Button) findViewById(R.id.admin_reg_btn);
-        Button admin_reg_login_btn = (Button) findViewById(R.id.admin_reg_login_btn);
+        customer_reg_username = (EditText) findViewById(R.id.customer_reg_username);
+        customer_reg_email = (EditText) findViewById(R.id.customer_reg_email);
+        customer_reg_pass = (EditText) findViewById(R.id.customer_reg_pass);
+        customer_reg_confirm_pass = (EditText) findViewById(R.id.customer_reg_confirm_pass);
+        Button customer_reg_btn = (Button) findViewById(R.id.customer_reg_btn);
+        Button customer_reg_login_btn = (Button) findViewById(R.id.customer_reg_login_btn);
         regProgressBr = (ProgressBar) findViewById(R.id.progressBar2);
 
         //already have an account - back to login
-        admin_reg_login_btn.setOnClickListener(new View.OnClickListener() {
+        customer_reg_login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AdminLoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), CustomerLoginActivity.class));
             }
         });
 
         //register a new account
-        admin_reg_btn.setOnClickListener(new View.OnClickListener() {
+        customer_reg_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String username = admin_reg_username.getText().toString().trim();
-                final String email = admin_reg_email.getText().toString().trim();
-                final String pass = admin_reg_pass.getText().toString().trim();
-                final String confirmPass = admin_reg_confirm_pass.getText().toString().trim();
+                final String username = customer_reg_username.getText().toString().trim();
+                final String email = customer_reg_email.getText().toString().trim();
+                final String pass = customer_reg_pass.getText().toString().trim();
+                final String confirmPass = customer_reg_confirm_pass.getText().toString().trim();
 
                 if (username.isEmpty()) {
-                    admin_reg_username.setError("Username is Required");
-                    admin_reg_username.requestFocus();
+                    customer_reg_username.setError("Username is Required");
+                    customer_reg_username.requestFocus();
                     return;
                 }
                 if (email.isEmpty()) {
-                    admin_reg_email.setError("Email is Required");
-                    admin_reg_email.requestFocus();
+                    customer_reg_email.setError("Email is Required");
+                    customer_reg_email.requestFocus();
                     return;
                 }
                 if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    admin_reg_email.setError("Please provide a valid email");
-                    admin_reg_email.requestFocus();
+                    customer_reg_email.setError("Please provide a valid email");
+                    customer_reg_email.requestFocus();
                     return;
                 }
                 if (pass.isEmpty()) {
-                    admin_reg_pass.setError("Password is Required");
-                    admin_reg_pass.requestFocus();
+                    customer_reg_pass.setError("Password is Required");
+                    customer_reg_pass.requestFocus();
                     return;
                 }
                 if (pass.length() < 6) {
-                    admin_reg_pass.setError("Min password length should be 6 characters");
-                    admin_reg_pass.requestFocus();
+                    customer_reg_pass.setError("Min password length should be 6 characters");
+                    customer_reg_pass.requestFocus();
                     return;
                 }
                 if (TextUtils.isEmpty(confirmPass)) {
-                    admin_reg_confirm_pass.setError("Confirm Password is Required");
-                    admin_reg_confirm_pass.requestFocus();
+                    customer_reg_confirm_pass.setError("Confirm Password is Required");
+                    customer_reg_confirm_pass.requestFocus();
                     return;
                 }
                 if (!confirmPass.equals(pass)) {
-                    admin_reg_confirm_pass.setError("Confirm password must match Password");
-                    admin_reg_confirm_pass.requestFocus();
+                    customer_reg_confirm_pass.setError("Confirm password must match Password");
+                    customer_reg_confirm_pass.requestFocus();
                     return;
                 }
 
@@ -118,25 +118,25 @@ public class AdminRegisterActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             User user = new User(username, email);
 
-                            FirebaseDatabase.getInstance().getReference("Admin")
+                            FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Toast.makeText(AdminRegisterActivity.this, "Admin has been registered successfully", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(CustomerRegisterActivity.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
                                         regProgressBr.setVisibility(View.GONE);
                                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     }
                                     else{
-                                        Toast.makeText(AdminRegisterActivity.this, "Failed to register, Try again!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(CustomerRegisterActivity.this, "Failed to register, Try again!", Toast.LENGTH_LONG).show();
                                         regProgressBr.setVisibility(View.GONE);
                                     }
                                 }
                             });
                         }
                         else{
-                            Toast.makeText(AdminRegisterActivity.this, "Failed to register, Try again!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(CustomerRegisterActivity.this, "Failed to register, Try again!", Toast.LENGTH_LONG).show();
                             regProgressBr.setVisibility(View.GONE);
                         }
                     }

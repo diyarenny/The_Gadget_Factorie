@@ -37,4 +37,6 @@
     <string name="customer_password">Customer Password</string>
     <string name="customer">Customer</string>
     <string name="new_here_create_an_account_customer">New Here Create An Account Customer</string>
+    <string name="new_here_already_have_an_account_customer">New Here Already Have An Account Customer</string>
+    <string name="already_have_an_account_customer">Already Have An Account Customer?</string>
 </resources>
