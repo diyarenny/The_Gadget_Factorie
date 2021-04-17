@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class AdminLoginActivity extends AppCompatActivity {
     //variables
     private EditText admin_email;  //email
-    private EditText loginPassword;  //password
+    private EditText admin_pass;  //password
     private Button admin_login_btn;   //login button
     private Button admin_register_btn;  //create new account button
     private ProgressBar loginProgressBr;   //login progress bar
@@ -39,9 +39,9 @@ public class AdminLoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         admin_email = (EditText) findViewById(R.id.admin_email);
-        loginPassword = (EditText) findViewById(R.id.reg_confirm_pass);
-        admin_login_btn = (Button) findViewById(R.id.login_btn);
-        admin_register_btn = (Button) findViewById(R.id.login_reg_btn);
+        admin_pass = (EditText) findViewById(R.id.admin_pass);
+        admin_login_btn = (Button) findViewById(R.id.admin_login_btn);
+        admin_register_btn = (Button) findViewById(R.id.admin_register_btn);
         loginProgressBr = (ProgressBar) findViewById(R.id.progressBar);
         forgotPass = (TextView) findViewById(R.id.forgotPass);
 
@@ -65,7 +65,7 @@ public class AdminLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = admin_email.getText().toString().trim();
-                String pass = loginPassword.getText().toString().trim();
+                String pass = admin_pass.getText().toString().trim();
 
                 if (email.isEmpty()) {
                     admin_email.setError("Email is Required");
@@ -78,13 +78,13 @@ public class AdminLoginActivity extends AppCompatActivity {
                     return;
                 }
                 if (pass.isEmpty()) {
-                    loginPassword.setError("Password is Required");
-                    loginPassword.requestFocus();
+                    admin_pass.setError("Password is Required");
+                    admin_pass.requestFocus();
                     return;
                 }
                 if (pass.length() < 6) {
-                    loginPassword.setError("Min password length should be 6 characters");
-                    loginPassword.requestFocus();
+                    admin_pass.setError("Min password length should be 6 characters");
+                    admin_pass.requestFocus();
                     return;
                 }
 
