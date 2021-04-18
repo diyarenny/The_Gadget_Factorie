@@ -88,7 +88,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                loginProgressBr.setVisibility(View.VISIBLE);
+                loginProgressBr.setVisibility(View.GONE);
                 //authenticates the user
                 mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -97,8 +97,8 @@ public class CustomerLoginActivity extends AppCompatActivity {
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                             if(user.isEmailVerified()){
+                                loginProgressBr.setVisibility(View.VISIBLE);
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                loginProgressBr.setVisibility(View.GONE);
                             }
                             else{
                                 user.sendEmailVerification();
@@ -107,9 +107,9 @@ public class CustomerLoginActivity extends AppCompatActivity {
 
                         }
                         else{
+                            loginProgressBr.setVisibility(View.GONE);
                             String errorMessage = task.getException().getMessage();
                             Toast.makeText(CustomerLoginActivity.this, "Login Failed" + errorMessage, Toast.LENGTH_SHORT).show();
-                            loginProgressBr.setVisibility(View.GONE);
                         }
                     }
                 });

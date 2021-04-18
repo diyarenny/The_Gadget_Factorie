@@ -109,7 +109,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                regProgressBr.setVisibility(View.VISIBLE);
+                regProgressBr.setVisibility(View.GONE);
 
                 //creates a new user into the database with an email and password
                 mAuth.createUserWithEmailAndPassword(email , pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -124,20 +124,19 @@ public class AdminRegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
+                                        regProgressBr.setVisibility(View.VISIBLE);
                                         Toast.makeText(AdminRegisterActivity.this, "Admin has been registered successfully", Toast.LENGTH_LONG).show();
-                                        regProgressBr.setVisibility(View.GONE);
                                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     }
                                     else{
                                         Toast.makeText(AdminRegisterActivity.this, "Failed to register, Try again!", Toast.LENGTH_LONG).show();
-                                        regProgressBr.setVisibility(View.GONE);
                                     }
                                 }
                             });
                         }
                         else{
-                            Toast.makeText(AdminRegisterActivity.this, "Failed to register, Try again!", Toast.LENGTH_LONG).show();
                             regProgressBr.setVisibility(View.GONE);
+                            Toast.makeText(AdminRegisterActivity.this, "Failed to register, Try again!", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
