@@ -15,9 +15,35 @@
         app:layout_constraintBottom_toTopOf="@+id/promoCode"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView android:layout_height="32dp" android:layout_width="209dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/rv" android:textStyle="bold" android:textSize="24sp" android:textColor="@color/black" android:text="Shopping Cart" android:layout_marginBottom="10dp" android:id="@+id/shoppingCart" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.097" android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/shoppingCart"
+        android:layout_width="209dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="Shopping Cart"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView android:layout_height="301dp" android:layout_width="400dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/total_textView" android:id="@+id/rv" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.511" android:layout_marginTop="4dp" app:layout_constraintVertical_bias="1.0" app:layout_constraintTop_toBottomOf="@+id/shoppingCart" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" android:layout_margin="5dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="383dp"
+        android:layout_height="290dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="4dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/total_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shoppingCart"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintBottom_toTopOf="@+id/promoCode" android:text="Total:" android:layout_marginBottom="60dp" android:id="@+id/total_textView" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.128" app:layout_constraintEnd_toStartOf="@+id/totalValue"/>
 
