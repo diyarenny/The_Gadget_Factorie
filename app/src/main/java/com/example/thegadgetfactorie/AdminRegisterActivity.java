@@ -116,7 +116,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Admin admin = new Admin(username, email);
+                            Admin admin = new Admin(username, email, pass);
 
                             FirebaseDatabase.getInstance().getReference("Admin")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
