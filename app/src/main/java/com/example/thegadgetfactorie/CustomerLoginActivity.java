@@ -14,13 +14,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.thegadgetfactorie.Controller.ILoginController;
+import com.example.thegadgetfactorie.Controller.LoginController;
+import com.example.thegadgetfactorie.View.ILoginView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class CustomerLoginActivity extends AppCompatActivity {
+public class CustomerLoginActivity extends AppCompatActivity implements ILoginView {
     //variables
     private EditText customer_email;  //email
     private EditText customer_pass;  //password
@@ -28,6 +31,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
     private Button customer_register_btn;  //create new account button
     private ProgressBar loginProgressBr;   //login progress bar
     private TextView forgotPass;   //forgot password
+    LoginController loginController ;
 
     private FirebaseAuth mAuth;
 
@@ -37,7 +41,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customer_login);
 
         mAuth = FirebaseAuth.getInstance();
-
+        loginController = new LoginController(this);
         customer_email = (EditText) findViewById(R.id.customer_email);
         customer_pass = (EditText) findViewById(R.id.customer_pass);
         customer_login_btn = (Button) findViewById(R.id.customer_login_btn);
@@ -66,7 +70,10 @@ public class CustomerLoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = customer_email.getText().toString().trim();
                 String pass = customer_pass.getText().toString().trim();
+                loginController.OnLogin(email, pass);
 
+
+                /*
                 if (email.isEmpty()) {
                     customer_email.setError("Email is Required");
                     customer_email.requestFocus();
@@ -87,6 +94,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
                     customer_pass.requestFocus();
                     return;
                 }
+                 */
 
                 loginProgressBr.setVisibility(View.GONE);
                 //authenticates the user
@@ -126,5 +134,15 @@ public class CustomerLoginActivity extends AppCompatActivity {
         if (currentUser != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
+    }
+
+    @Override
+    public void OnLoginSuccess(String message) {
+        Toast.makeText(CustomerLoginActivity.this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void OnLoginError(String message) {
+        Toast.makeText(CustomerLoginActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 }
