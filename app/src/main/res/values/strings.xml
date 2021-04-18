@@ -18,7 +18,7 @@
     <string name="already_have_an_account">Already Have An Account?</string>
     <string name="new_here_create_an_account">New Here Create An Account</string>
     <string name="login_to_account">Login to Account</string>
-    <string name="forgot_password">Forgot Password</string>
+    <string name="forgot_password">Forgot Password?</string>
     <string name="reset_password">Reset Password</string>
     <string name="enter_your_email">Enter Your Email</string>
     <string name="settings">Settings</string>
