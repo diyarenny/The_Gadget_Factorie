@@ -55,15 +55,11 @@ public class Checkout extends AppCompatActivity {
             }
         });
 
-
-
     }
 
 
     public void getCart() {
-
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference uidRef = rootRef.child("Cart").child(uid);
@@ -88,7 +84,7 @@ public class Checkout extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                databaseError.getMessage(); //Don't ignore errors!
+                databaseError.getMessage();
             }
         };
         uidRef.addListenerForSingleValueEvent(valueEventListener);
@@ -122,7 +118,7 @@ public class Checkout extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                databaseError.getMessage(); //Don't ignore errors!
+                databaseError.getMessage();
             }
         };
         uidRef.addListenerForSingleValueEvent(valueEventListener);
@@ -157,14 +153,10 @@ public class Checkout extends AppCompatActivity {
             }
         };
         uidRef.addListenerForSingleValueEvent(valueEventListener);
-
-
-
     }
 
 
     public void setOrderHistory(View view) {
-
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 

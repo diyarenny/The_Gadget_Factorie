@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <androidx.cardview.widget.CardView android:layout_margin="5dp" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="289dp" android:layout_width="match_parent" android:layout_alignParentLeft="true" android:id="@+id/layout">
+
+    <ImageView android:layout_height="109dp" android:layout_width="107dp" android:id="@+id/imageViewOrder" app:srcCompat="@android:drawable/divider_horizontal_dark" android:paddingLeft="12dp" android:baselineAlignBottom="true"> </ImageView>
+
+
+    -<LinearLayout android:orientation="vertical" android:layout_height="wrap_content" android:layout_width="291dp">
+
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/titleET" android:paddingLeft="20dp" android:text="Name" android:inputType="textPersonName" android:ems="10"/>
+
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/manuET" android:paddingLeft="20dp" android:text="Name" android:inputType="textPersonName" android:ems="10"/>
+
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/categoryET" android:paddingLeft="20dp" android:text="Name" android:inputType="textPersonName" android:ems="10"/>
+
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/priceET" android:paddingLeft="20dp" android:text="Name" android:inputType="textPersonName" android:ems="10"/>
+
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/stockET" android:paddingLeft="20dp" android:text="Name" android:inputType="textPersonName" android:ems="10" android:paddingBottom="10dp"/>
+
+    <Button android:layout_height="52dp" android:layout_width="wrap_content" android:id="@+id/updateData" android:text="Update Data" app:backgroundTint="@color/colorAccent" android:paddingRight="30dp" android:padding="10dp" android:background="@color/colorAccent" android:layout_gravity="right"/>
+
+</LinearLayout>
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>

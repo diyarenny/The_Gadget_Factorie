@@ -39,4 +39,6 @@
     <string name="new_here_create_an_account_customer">New Here Create An Account Customer</string>
     <string name="new_here_already_have_an_account_customer">New Here Already Have An Account Customer</string>
     <string name="already_have_an_account_customer">Already Have An Account Customer?</string>
+    <string name="customer_order_history">Customer Order History</string>
+    <string name="stock_database">Stock Database</string>
 </resources>

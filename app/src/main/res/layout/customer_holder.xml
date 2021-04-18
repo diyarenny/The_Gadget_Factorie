@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <androidx.cardview.widget.CardView android:paddingBottom="30dp" android:paddingRight="20dp" android:orientation="horizontal" android:layout_margin="5dp" android:layout_height="wrap_content" android:layout_width="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout android:orientation="horizontal" android:layout_height="match_parent" android:layout_width="match_parent" android:layout_alignParentLeft="true" android:id="@+id/layout">
+
+
+    <LinearLayout android:orientation="vertical" android:layout_height="173dp" android:layout_width="403dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/orderNum" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/common_google_signin_btn_text_dark_focused" android:text="sample" android:paddingLeft="30dp" android:padding="10dp" android:layout_alignParentRight="true"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/purchaseName" android:text="sample" android:paddingLeft="20dp"/>
+
+    <TextView android:paddingBottom="5dp" android:layout_height="wrap_content" android:layout_width="391dp" android:id="@+id/purchaseManu" android:text="sample" android:paddingLeft="20dp"/>
+
+    <TextView android:paddingBottom="5dp" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/customerNum" android:text="sample" android:paddingLeft="20dp"/>
+
+    <Button android:paddingRight="10dp" android:layout_height="wrap_content" android:layout_width="134dp" android:id="@+id/orderDetails" android:text="purchases" android:padding="10dp" app:backgroundTint="@color/colorAccent" android:background="@color/colorAccent" android:layout_gravity="right"/>
+
+</LinearLayout>
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>
