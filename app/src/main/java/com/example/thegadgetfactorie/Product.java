@@ -5,7 +5,7 @@ public class Product {
     String manufacturer;
     String category;
     String price;
-    String stocklevel;
+    String stockLevel;
     String image;
 
     //empty constructor
@@ -13,12 +13,12 @@ public class Product {
 
     }
 
-    public Product(String title, String manufacturer, String category, String price, String stocklevel, String image){
+    public Product(String title, String manufacturer, String category, String price, String stockLevel, String image){
         this.title = title;
         this.manufacturer = manufacturer;
         this.category = category;
         this.price = price;
-        this.stocklevel = stocklevel;
+        this.stockLevel = stockLevel;
         this.image = image;
     }
 
@@ -38,8 +38,8 @@ public class Product {
         return price;
     }
 
-    public String getStocklevel() {
-        return stocklevel;
+    public String getStockLevel() {
+        return stockLevel;
     }
 
     public String getImage() {
@@ -62,8 +62,8 @@ public class Product {
         this.price = price;
     }
 
-    public void setStocklevel(String stocklevel) {
-        this.stocklevel = stocklevel;
+    public void setStockLevel(String stockLevel) {
+        this.stockLevel = stockLevel;
     }
 
     public void setImage(String image) {

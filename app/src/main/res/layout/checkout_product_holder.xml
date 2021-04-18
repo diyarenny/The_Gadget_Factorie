@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <androidx.cardview.widget.CardView android:layout_margin="5dp" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="match_parent" android:layout_width="391dp" android:layout_alignParentLeft="true" android:id="@+id/layout">
+
+    <ImageView android:layout_height="match_parent" android:layout_width="105dp" android:id="@+id/imageViewCart" app:srcCompat="@android:drawable/divider_horizontal_dark" android:paddingLeft="12dp" android:baselineAlignBottom="true"> </ImageView>
+
+
+    -<LinearLayout android:orientation="vertical" android:layout_height="wrap_content" android:layout_width="291dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/titleViewCart" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/common_google_signin_btn_text_dark_focused" android:text="sample" android:padding="10dp" android:layout_alignParentRight="true"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="285dp" android:id="@+id/manuViewCart" android:paddingLeft="10dp" android:text="sample"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/priceViewCart" android:paddingLeft="10dp" android:text="sample" android:paddingBottom="5dp"/>
+
+</LinearLayout>
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>
